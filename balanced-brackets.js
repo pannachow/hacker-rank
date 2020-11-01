@@ -25,26 +25,26 @@ function readLine() {
 }
 
 // Complete the isBalanced function below.
-function isBalanced(s){
-    const bracket = [];
+function isBalanced(s) {
+    const brackets = [];
     for (let ch of s) {
         if (["[", "{", "("].includes(ch)) {
-            bracket.push(ch);
+            brackets.push(ch);
         } else if (ch === "}") {
-            if (bracket.pop() !== "{") {
+            if (brackets.pop() !== "{") {
                 return "NO";
             }
-        }else if (ch === "]") {
-            if (bracket.pop() !== "[") {
+        } else if (ch === "]") {
+            if (brackets.pop() !== "[") {
                 return "NO";
             }
-        }else if (ch === ")") {
-            if (bracket.pop() !== "(") {
+        } else if (ch === ")") {
+            if (brackets.pop() !== "(") {
                 return "NO";
             }
         }
     }
-    return bracket.length === 0 ? "YES" : "NO";
+    return brackets.length === 0 ? "YES" : "NO";
 }
 
 
